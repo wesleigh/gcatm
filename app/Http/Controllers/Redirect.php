@@ -11,11 +11,11 @@ class Redirect
   {
     if (Auth::check())
     {
-      Redirect::to('/dashboard');
+      return R::to('/dashboard');
     }
     else
     {
-      Redirect::to('/login');
+      return R::to('/login');
     }
   }
 

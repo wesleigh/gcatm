@@ -70,6 +70,7 @@
                                 <ul class="nav navigation">
                                     <li class="navigation-header"> Actions</li>
                                     <li><a data-toggle="modal" data-target="#add_device"><i class="icon-database-add text-slate-400"></i> Add Device</a></li>
+                                    <li><a data-toggle="modal" data-target="#search"><i class="icon-search4 text-slate-400"></i>Find Device </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -167,3 +168,36 @@
               </div>
             </div>
           </div>
+
+          <div id="search" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title"><i class="icon-menu7"></i> &nbsp;Search Devices</h5>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" method="post" action="/devices/search">
+                      {{ csrf_field() }}
+                      <fieldset class="content-user">
+                        <legend class="text-bold">Basic Information</legend>
+
+                        <div class="form-group has-feedback has-feedback-left">
+                          <label>Serial Number</label>
+                          <input type="text" class="form-control input-xlg" name="serial_number">
+                          <div class="form-control-feedback">
+                            <i class="icon-barcode2"></i>
+                          </div>
+                        </div>
+
+
+                      </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Close</button>
+                      <button type="submit" class="btn btn-primary"><i class="icon-search4"></i> Find</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>

@@ -67,7 +67,7 @@
                             <!-- Administration -->
                             <li class="navigation-header"><span> Administration </span> </li>
                             <li> <a href="/devices/list"> <i class="icon-wrench"></i> Manage Devices </a> </li>
-
+                            <li> <a href="/users/list"> <i class="icon-users"></i> User Management </a> </li>
                         </ul>
                     </div>
                 </div>

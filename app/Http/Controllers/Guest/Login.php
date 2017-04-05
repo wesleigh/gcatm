@@ -28,6 +28,10 @@ class Login extends Controller
 
       if (!Auth::attempt($user))
       {
+        return Redirect::to('/dashboard');
+      }
+      else
+      {
         return Redirect::to('/login')->withError('Wrong password');
       }
 

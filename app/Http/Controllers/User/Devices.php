@@ -15,6 +15,20 @@ class Devices
       ->withDevices(Device::orderBy('id', 'DESC')->get());
   }
 
+  public function search (Request $request)
+  {
+    if (Device::where('serial_number','LIKE', '%' . $request->serial_number . '%')->count() > 0)
+    {
+      return view('user.devices')
+        ->withPage('Matching Devices')
+        ->withDevices(Device::where('serial_number', 'LIKE', '%' . $request->serial_number . '%')->get());
+    }
+    else
+    {
+      return Redirect::to('/devices/list')->withError('No similar devices found');
+    }
+  }
+
   public function create (Request $request)
   {
     $device                   = new Device;
